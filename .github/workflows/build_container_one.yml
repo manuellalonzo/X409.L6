@@ -1,10 +1,11 @@
 name: Build Our Container 
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is building container
 on: [push]
 jobs:
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Does this work?"
 	uses: actions/checkout@v4
       - name: Build Image
         run: docker iamge build .
