@@ -5,8 +5,6 @@ jobs:
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Docker
-        run: sudo install docker -y
 	uses: actions/checkout@v4
       - name: Build Image
         run: docker iamge build .
