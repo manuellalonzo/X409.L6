@@ -1,5 +1,5 @@
 name: Build Our Container 
-run-name: ${{ github.actor }} is building container
+run-name: ${{ github.actor }} is building and uploading
 on: [push]
 jobs:
   BuildMyAppContainerImage:
@@ -15,10 +15,10 @@ jobs:
       - name: Build Image
         run: docker build -t ghar .
       - name: Save docker file
-        run: docker image save ghar > ghar.tar
+        run: docker image save ghar > img/ghar.tar
       - name: Archive buid artifact
         uses: actions/upload-artifact@v4
         with:
           name: ghar.tar
-          path: img/container.tar
+          path: img/ghar.tar
       
