@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Does this work?"
-	uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Build Image
         run: docker iamge build .
       
