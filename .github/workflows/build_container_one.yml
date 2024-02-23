@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Does this work?"
+      - name: Setup Code
         uses: actions/checkout@v4
+      - name: Get Docker
+        run: sudo apt install -y docker
       - name: Build Image
         run: docker iamge build .
       
