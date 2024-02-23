@@ -2,7 +2,6 @@ name: Build Our AMI
 run-name: ${{ github.actor }} is building AMI
 on: [push]
 jobs:
-  environment: AWS_ACCESS
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
     steps:
