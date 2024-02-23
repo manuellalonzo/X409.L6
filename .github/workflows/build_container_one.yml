@@ -1,0 +1,14 @@
+name: Build Our Container 
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  BuildMyAppContainerImage:
+    runs-on: ubuntu-latest
+    steps:
+      - name:Install Docker
+        run: sudo install docker -y
+
+    steps:
+      - name: Build Image
+        run: docker iamge build .
+      
