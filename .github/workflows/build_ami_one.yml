@@ -1,7 +1,8 @@
-name: Build Our Container 
-run-name: ${{ github.actor }} is building container
+name: Build Our AMI 
+run-name: ${{ github.actor }} is building AMI
 on: [push]
 jobs:
+  environment: AWS_ACCESS
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
     steps:
@@ -10,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Check that checkout worked
         run: ls -lh
-      - name: Get Docker
+      - name: Get Packer
         run: sudo apt install -y packer
       - name: Build Image
         env:
