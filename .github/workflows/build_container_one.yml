@@ -2,8 +2,7 @@ name: Build Our Container
 run-name: ${{ github.actor }} is building container
 on:
   workflow_dispatch:
-  pull_request:
-    types: [opened, reopened]
+  
 jobs:
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
