@@ -19,5 +19,4 @@ jobs:
           #AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         run: |
           packer init .
-          packer build my_app_ami.pkr.hcl
-      
+          packer build packer_with_provisioner.pkr.hcl      
