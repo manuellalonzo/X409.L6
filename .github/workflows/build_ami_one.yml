@@ -5,7 +5,7 @@ jobs:
   BuildMyAppContainerImage:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Does this work?"
+      - run: echo "Does this thing work?"
       - name: Setup Code
         uses: actions/checkout@v4
       - name: Check that checkout worked
