@@ -8,15 +8,10 @@ jobs:
       - run: echo "Does this work?"
       - name: Setup Code
         uses: actions/checkout@v4
-      - name: AWS credentials 
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: us-east-2         
       - name: Check that checkout worked
         run: ls -lh
       - name: Get Packer
         run: sudo apt install -y packer
-       
       - name: Build Image
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
