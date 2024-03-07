@@ -15,5 +15,9 @@ jobs:
       - name: Get Docker
         run: sudo apt install -y docker
       - name: Build Image
-        run: docker image build .
-      
+        run: docker build --tag dummy_webapp .
+      - name: Docker run
+        run: docker run -p 12344:12344 dummy_webapp
+      - name: check if web app is up
+        run: curl -Is http://localhost:12344        
+        
