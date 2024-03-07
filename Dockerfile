@@ -1,9 +1,9 @@
 FROM ubuntu:22.04
 RUN apt-get -y update 
 RUN apt-get -y upgrade
-#RUN apt-get -y install gcc
+RUN apt-get -y install gcc
 RUN apt-get -y install git
-#RUN apt-get -y install bash
+RUN apt-get -y install bash
 
 ADD dummy_serv.c /
 
