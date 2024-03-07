@@ -1,0 +1,10 @@
+[Unit]
+Description=Basic Dummy Application
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+ExecStart=/home/admin/app_files/dummyserv
+
+[Install]
+WantedBy=multi-user.target
