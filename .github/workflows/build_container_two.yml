@@ -1,0 +1,24 @@
+name: Build Our Container 
+run-name: ${{ github.actor }} is building and uploading
+on: [push]
+jobs:
+  BuildMyAppContainerImage:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Does this work?"
+      - name: Setup Code
+        uses: actions/checkout@v4
+      - name: Check that checkout worked
+        run: ls -lh
+      - name: Get Docker
+        run: sudo apt install -y docker
+      - name: Build Image
+        run: docker build -t ghar .
+      - name: Save docker file
+        run: docker image save ghar > img/ghar.tar
+      - name: Archive buid artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ghar.tar
+          path: img/ghar.tar
+      
